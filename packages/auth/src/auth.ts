@@ -1,4 +1,4 @@
-import { db } from "@boinly/db/client"
+import { db } from "@boinly/db/main"
 import { expo } from "@better-auth/expo"
 import { betterAuth } from "better-auth"
 import { oAuthProxy } from "better-auth/plugins"

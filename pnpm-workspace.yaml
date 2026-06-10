@@ -33,3 +33,6 @@ linkWorkspacePackages: true
 onlyBuiltDependencies:
   - "@tailwindcss/oxide"
   - esbuild
+
+allowBuilds:
+  esbuild: true

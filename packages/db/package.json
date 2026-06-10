@@ -4,9 +4,7 @@
   "private": true,
   "license": "MIT",
   "exports": {
-    "./client": {
-      "default": "./src/db/connect.ts"
-    }
+    "./main": "./src/db.ts"
   },
   "scripts": {
     "build": "tsc",

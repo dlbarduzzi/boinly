@@ -9,7 +9,7 @@ export default antfu({
     indent: 2,
     quotes: "double",
   },
-  ignores: ["node_modules/**", "src/db/migrations/**"],
+  ignores: ["node_modules/**", "src/migrations/**"],
   rules: {
     "antfu/if-newline": "off",
     "no-empty": "error",

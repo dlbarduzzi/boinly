@@ -4,8 +4,8 @@
   "private": true,
   "license": "MIT",
   "exports": {
-    "./auth": "./src/auth.ts",
-    "./env": "./src/env.ts"
+    "./env": "./src/env.ts",
+    "./main": "./src/auth.ts"
   },
   "scripts": {
     "clean": "git clean -xdf .cache .turbo dist node_modules",

@@ -1,6 +1,6 @@
 import postgres from "postgres"
 
-import { env } from "../lib/env"
+import { env } from "./env"
 import { drizzle } from "drizzle-orm/postgres-js"
 
 import * as authSchema from "./schemas/auth"
