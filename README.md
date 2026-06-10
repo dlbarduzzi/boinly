@@ -1,1 +1,5 @@
 # Boinly
+
+## License
+
+[MIT](./LICENSE)

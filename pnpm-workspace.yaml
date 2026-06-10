@@ -1,0 +1,39 @@
+# Make eslint happy.
+shellEmulator: true
+
+# Make eslint happy.
+trustPolicy: no-downgrade
+
+packages: []
+
+overrides:
+  lightningcss: 1.30.1
+
+catalog:
+  "@antfu/eslint-config": ^7.7.3
+  "@better-auth/expo": 1.6.11
+  "@tailwindcss/postcss": ^4.3.0
+  "@tanstack/react-query": ^5.101.0
+  "@trpc/client": ^11.17.0
+  "@trpc/server": ^11.17.0
+  "@trpc/tanstack-react-query": ^11.17.0
+  "@types/node": ^22.19.20
+  better-auth: 1.6.11
+  eslint: ^9.39.4
+  eslint-plugin-format: ^2.0.1
+  tailwindcss: ^4.3.0
+  typescript: ^5.9.3
+  zod: ^4.4.3
+
+catalogs:
+  react19:
+    "@types/react": ~19.2.0
+    "@types/react-dom": ~19.2.0
+    react: 19.2.3
+    react-dom: 19.2.3
+
+linkWorkspacePackages: true
+
+onlyBuiltDependencies:
+  - "@tailwindcss/oxide"
+  - esbuild
