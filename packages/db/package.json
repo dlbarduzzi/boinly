@@ -1,0 +1,38 @@
+{
+  "name": "@boinly/db",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "exports": {
+    "./client": {
+      "default": "./src/db/connect.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "clean": "git clean -xdf .cache .turbo dist node_modules",
+    "dev": "tsc",
+    "lint": "eslint",
+    "db:push": "pnpm with-env drizzle-kit push",
+    "db:studio": "pnpm with-env drizzle-kit studio",
+    "db:migrate": "pnpm with-env drizzle-kit migrate",
+    "db:generate": "pnpm with-env drizzle-kit generate",
+    "typecheck": "tsc --noEmit --emitDeclarationOnly false",
+    "with-env": "dotenv -e ../../.env --"
+  },
+  "dependencies": {
+    "@t3-oss/env-core": "^0.13.11",
+    "drizzle-orm": "^0.45.2",
+    "postgres": "^3.4.9",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "catalog:",
+    "@boinly/tsconfig": "workspace:*",
+    "@types/node": "catalog:",
+    "drizzle-kit": "^0.31.5",
+    "eslint": "catalog:",
+    "eslint-plugin-format": "catalog:",
+    "typescript": "catalog:"
+  }
+}

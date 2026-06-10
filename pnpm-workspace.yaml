@@ -1,10 +1,6 @@
-# Make eslint happy.
-shellEmulator: true
-
-# Make eslint happy.
-trustPolicy: no-downgrade
-
-packages: []
+packages:
+  - packages/*
+  - tooling/*
 
 overrides:
   lightningcss: 1.30.1

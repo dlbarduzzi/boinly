@@ -9,9 +9,10 @@ export default antfu({
     indent: 2,
     quotes: "double",
   },
-  ignores: ["apps/**", "packages/**", "node_modules/**"],
+  ignores: ["node_modules/**"],
   rules: {
     "pnpm/json-enforce-catalog": "off",
+    "pnpm/yaml-enforce-settings": "off",
     // Remove this after catalog is fixed.
     "pnpm/yaml-no-unused-catalog-item": "off",
   },

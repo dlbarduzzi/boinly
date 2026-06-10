@@ -1,0 +1,12 @@
+services:
+  db:
+    container_name: boinly-db
+    image: postgres:17.9
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_DB=db
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=pass
+    volumes:
+      - ./.local/docker/volume/db:/var/lib/postgresql
