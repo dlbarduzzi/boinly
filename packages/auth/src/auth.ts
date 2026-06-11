@@ -4,7 +4,6 @@ import { betterAuth } from "better-auth"
 import { drizzleAdapter } from "better-auth/adapters/drizzle"
 
 type AuthOptions = {
-  appName: string
   baseUrl: string
   secret: string
   githubClientId: string
@@ -19,7 +18,7 @@ export function initAuth({
   ...opts
 }: AuthOptions) {
   return betterAuth({
-    appName: opts.appName,
+    appName: "Boinly",
     basePath: "/api/auth",
     baseURL: opts.baseUrl,
     database: drizzleAdapter(db, {

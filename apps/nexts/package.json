@@ -1,0 +1,36 @@
+{
+  "name": "@boinly/nextjs",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "build": "pnpm with-env next build",
+    "clean": "git clean -xdf .cache .next .turbo node_modules",
+    "dev": "pnpm with-env next dev",
+    "format": "prettier --check . --ignore-path ../../.gitignore",
+    "lint": "eslint",
+    "start": "pnpm with-env next start",
+    "typecheck": "tsc --noEmit",
+    "with-env": "dotenv -e ../../.env --"
+  },
+  "dependencies": {
+    "@boinly/auth": "workspace:*",
+    "@boinly/db": "workspace:*",
+    "@boinly/trpc": "workspace:*",
+    "@t3-oss/env-nextjs": "^0.13.11",
+    "@trpc/server": "catalog:",
+    "next": "16.2.7",
+    "server-only": "^0.0.1",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "catalog:",
+    "@boinly/tsconfig": "workspace:*",
+    "@types/node": "catalog:",
+    "@types/react": "19.2.17",
+    "eslint": "catalog:",
+    "eslint-plugin-format": "catalog:",
+    "jiti": "^2.7.0",
+    "typescript": "catalog:"
+  }
+}
