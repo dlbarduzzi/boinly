@@ -1,43 +1,35 @@
 import { db } from "@boinly/db/main"
 import { expo } from "@better-auth/expo"
 import { betterAuth } from "better-auth"
-import { oAuthProxy } from "better-auth/plugins"
 import { drizzleAdapter } from "better-auth/adapters/drizzle"
 
 type AuthOptions = {
   appName: string
   baseUrl: string
-  basePath: string
   secret: string
-  cookiePrefix: string
-  productionUrl: string
   githubClientId: string
   githubClientSecret: string
   googleClientId: string
   googleClientSecret: string
+  trustedOrigins?: Array<string>
 }
 
 export function initAuth({
-  basePath = "/api/auth",
+  trustedOrigins = [],
   ...opts
 }: AuthOptions) {
   return betterAuth({
     appName: opts.appName,
-    basePath,
+    basePath: "/api/auth",
     baseURL: opts.baseUrl,
     database: drizzleAdapter(db, {
       provider: "pg",
     }),
     secret: opts.secret,
-    plugins: [
-      oAuthProxy({
-        productionURL: opts.productionUrl,
-      }),
-      expo(),
-    ],
-    trustedOrigins: ["expo://"],
+    plugins: [expo()],
+    trustedOrigins: ["boinly://", ...trustedOrigins],
     advanced: {
-      cookiePrefix: opts.cookiePrefix,
+      cookiePrefix: "boinly",
     },
     session: {
       cookieCache: {
@@ -51,13 +43,13 @@ export function initAuth({
         enabled: true,
         clientId: opts.githubClientId,
         clientSecret: opts.githubClientSecret,
-        redirectURI: `${opts.productionUrl}/api/auth/callback/github`,
+        redirectURI: `${opts.baseUrl}/api/auth/callback/github`,
       },
       google: {
         enabled: true,
         clientId: opts.googleClientId,
         clientSecret: opts.googleClientSecret,
-        redirectURI: `${opts.productionUrl}/api/auth/callback/google`,
+        redirectURI: `${opts.baseUrl}/api/auth/callback/google`,
       },
     },
   })
